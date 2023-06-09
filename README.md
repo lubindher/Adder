@@ -42,15 +42,45 @@ Carry = AB + ACin+BCin
 
 
 ## Program:
-
-
+### Half Adder:
+```
+module exp3a(A,B,S,C);
+input A,B;
+output S,C;
+xor(S,A,B);
+and(C,A,B);
+endmodule
+```
+### Full Adder:
+```
+module exp3b(A,B,C,S,CA);
+input A,B,C;
+output S,CA;
+wire bc,acout,bcout,about,baout;
+xor(bc,B,C);
+xor(S,A,bc);
+and(acout,A,C);
+and(about,A,B);
+and(bcout,B,C);
+or(baout,bcout,about);
+or(CA,acout,baout);
+endmodule
+```
 ## RTL Schematic:
+### 1. HALF ADDER:
+![image](https://github.com/Afsarjumail/Adder/assets/118343395/6aadd7e0-213f-47b7-944e-8d1da9b1c62a)
 
 
+### 2.FULL ADDER:
+![image](https://github.com/Afsarjumail/Adder/assets/118343395/889c1eab-ea9b-46bd-bd1a-9c774733d57f)
 
 
 ## Timing Diagram:
+### 1. HALF ADDER:
+![image](https://github.com/Afsarjumail/Adder/assets/118343395/f29b242f-74b7-4f8f-9ddf-cc556190188c)
 
+### 2.FULL ADDER:
+![image](https://github.com/Afsarjumail/Adder/assets/118343395/f4d0a271-5cc3-4cf7-bb56-d4d6872652fa)
 
 ## Result:
 Thus the half adder and full adder circuits are designed and implemented and the truth tables are verified.
